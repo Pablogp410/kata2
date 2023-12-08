@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class TsvFileOrganizationLoader implements OrganizationLoader{
-    private File file;
+    private final File file;
 
     public TsvFileOrganizationLoader(File file) {
         this.file=file;
