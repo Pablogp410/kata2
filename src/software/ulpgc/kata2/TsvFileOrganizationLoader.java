@@ -8,6 +8,14 @@ import java.util.List;
 public class TsvFileOrganizationLoader implements OrganizationLoader{
     private File file;
 
+    public TsvFileOrganizationLoader(File file) {
+        this.file=file;
+    }
+
+    public static OrganizationLoader with(File file) {
+        return new TsvFileOrganizationLoader(file);
+    }
+
     @Override
     public List<Organization> load() {
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
